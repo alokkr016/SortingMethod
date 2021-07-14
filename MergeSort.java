@@ -1,5 +1,4 @@
 
-import java.util.Scanner;
 public class MergeSort {
     public static void mergeSort(int[] input) {  // 2 6 8 5 4 3
         // Write your code here
@@ -25,7 +24,6 @@ public class MergeSort {
 
 
     private static void merge(int []arr, int startIndex, int endIndex,int mid) {
-//      int []newArray = new int[arr.length];
       int []arr1 = makeArray(arr,startIndex,mid);
       int []arr2 = makeArray(arr,mid + 1,endIndex);
 //        if(arr1.length == 0){
