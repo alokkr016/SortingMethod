@@ -1,4 +1,3 @@
-
 public class MergeSort {
     public static void mergeSort(int[] input) {  // 2 6 8 5 4 3
         // Write your code here
@@ -8,6 +7,8 @@ public class MergeSort {
         int startIndex = 0;
         int endIndex = input.length - 1;
         mergeSortArray(input, startIndex, endIndex);
+        PrintArray.printArray(input);
+
     }
 
     private static void mergeSortArray(int[] arr, int startIndex, int endIndex) {
@@ -23,19 +24,19 @@ public class MergeSort {
 
 
 
-    private static void merge(int []arr, int startIndex, int endIndex,int mid) {
-      int []arr1 = makeArray(arr,startIndex,mid);
-      int []arr2 = makeArray(arr,mid + 1,endIndex);
-//        if(arr1.length == 0){
-//            return arr2;
-//        }
-//        if(arr2.length == 0){
-//            return arr1;
-//        }
+    public static void merge(int []arr, int startIndex, int endIndex,int mid) {
+        int n1 = mid  - startIndex + 1;
+        int n2 =  endIndex - mid;
+        int []arr1 = new int[n1];
+        int []arr2 = new int[n2];
+
+        for (int i = 0; i < n1; i++)
+            arr1[i] = arr[startIndex + i];
+        for (int j = 0; j < n2; j++)
+            arr2[j] = arr[mid + 1 + j];
         int j = 0;
         int k = 0;
-        int i = 0;
-//        int []newArr = new int[arr1.length + arr2.length];
+        int i = startIndex;
 
         while(j < arr1.length && k < arr2.length){
             if(arr1[j] < arr2[k]){
@@ -60,17 +61,8 @@ public class MergeSort {
             i++;
             k++;
         }
-//        for(int m = 0;m < arr.length;m++){
-//            arr[m] = newArr[m];
-//        }
-//        arr = newArr;
+
     }
 
-    private static int[] makeArray(int []arr,int startIndex, int endIndex){
-        int[] arr1 = new int[endIndex - startIndex + 1];
-        for(int i = 0;i < arr1.length;i++){
-            arr1[i] = arr[i + startIndex];
-        }
-        return arr1;
-    }
+
 }
