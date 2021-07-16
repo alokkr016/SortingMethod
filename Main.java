@@ -8,7 +8,8 @@ class Main {
     // BubbleSort.bubbleSort(arr);
     // SelectionSort.selectionSort(arr);
     // InsertionSort.insertionSort(arr);
-    MergeSort.mergeSort(arr);
+    // MergeSort.mergeSort(arr);
+    QuickSort.quickSort(arr);
     
   }
 }
